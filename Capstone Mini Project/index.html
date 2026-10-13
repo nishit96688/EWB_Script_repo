@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory Dashboard · Capstone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <path d="m3.3 7 8.7 5 8.7-5M12 22V12"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <strong>INVENTORY</strong>
+        <span>Analytics Console</span>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span class="pill-dot"><span class="dot"></span>LIVE</span>
+      <button id="demo-btn" class="btn-soft">Load Demo</button>
+    </div>
+  </header>
+
+  <main class="bento">
+
+    <!-- STAT CARD: Total Value -->
+    <section class="tile stat-tile">
+      <div class="tile-label">Total Inventory Value</div>
+      <div class="big-number" id="total-value">$0</div>
+      <div class="tile-sub" id="count-badge">0 items tracked</div>
+      <div class="tile-glow glow-teal"></div>
+    </section>
+
+    <!-- STAT CARD: Average -->
+    <section class="tile stat-tile">
+      <div class="tile-label">Average Price</div>
+      <div class="big-number" id="avg-price">$0</div>
+      <div class="tile-sub">across all products</div>
+      <div class="tile-glow glow-purple"></div>
+    </section>
+
+    <!-- STAT CARD: Tax -->
+    <section class="tile stat-tile">
+      <div class="tile-label">Total with 10% Tax</div>
+      <div class="big-number" id="total-with-tax">$0</div>
+      <div class="tile-sub">applied on total value</div>
+      <div class="tile-glow glow-pink"></div>
+    </section>
+
+    <!-- ADD PRODUCT -->
+    <section class="tile form-tile">
+      <div class="tile-header">
+        <h2>Add Product</h2>
+        <span class="tag">NEW</span>
+      </div>
+      <form id="product-form" class="stack">
+        <div class="field">
+          <label>Product Name</label>
+          <input type="text" id="product-name" placeholder="e.g. Monitor" required />
+        </div>
+        <div class="field">
+          <label>Price ($)</label>
+          <input type="number" id="product-price" placeholder="150" min="1" required />
+        </div>
+        <button type="submit" class="btn-primary">Add to Inventory</button>
+      </form>
+      <p id="form-msg" class="msg"></p>
+    </section>
+
+    <!-- ROSTER -->
+    <section class="tile roster-tile">
+      <div class="tile-header">
+        <h2>Inventory Roster</h2>
+        <span class="tag tag-mono" id="roster-count">0</span>
+      </div>
+      <div class="roster-list" id="roster-body">
+        <!-- JS se rows aayenge -->
+      </div>
+    </section>
+
+    <!-- AFFORDABLE -->
+    <section class="tile">
+      <div class="tile-header">
+        <h2>Affordable Items</h2>
+        <span class="tag tag-teal">under $200</span>
+      </div>
+      <div id="affordable-list" class="chip-cloud">
+        <span class="empty">no data</span>
+      </div>
+    </section>
+
+    <!-- FORMATTED REPORT -->
+    <section class="tile">
+      <div class="tile-header">
+        <h2>Formatted Report</h2>
+        <span class="tag tag-purple">map()</span>
+      </div>
+      <div id="formatted-list" class="report-list">
+        <span class="empty">no data</span>
+      </div>
+    </section>
+
+    <!-- DISCOUNTED -->
+    <section class="tile">
+      <div class="tile-header">
+        <h2>Discounted Prices</h2>
+        <span class="tag tag-pink">5% off</span>
+      </div>
+      <div id="discounted-list" class="discount-list">
+        <span class="empty">no data</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <span>JS Capstone · Interactive Product Inventory</span>
+    <span class="foot-dot">•</span>
+    <span>Variables · Loops · Functions · Arrays</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
